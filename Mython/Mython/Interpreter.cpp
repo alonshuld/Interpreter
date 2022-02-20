@@ -29,7 +29,8 @@ int main(int argc,char **argv)
 			{
 				if (var->isPrintable() == true)
 					std::cout << var->toString() << '\n';
-				delete var;
+				if(var->getTemp())
+					delete var;
 			}
 			else
 			{
