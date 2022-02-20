@@ -4,5 +4,4 @@
 
 class InterpreterException : public std::exception
 {
-
 };
