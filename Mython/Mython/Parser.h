@@ -18,7 +18,6 @@
 class Parser
 {
 public:
-    static std::unordered_map<std::string, Type*> _variables;
     static Type* parseString(std::string str);
     static Type* getType(std::string str);
     static void ClearVars();

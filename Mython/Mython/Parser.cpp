@@ -1,6 +1,7 @@
 #include "Parser.h"
 #include <iostream>
 
+std::unordered_map<std::string, Type*> _variables;
 
 Type* Parser::parseString(std::string str)
 {
@@ -99,7 +100,10 @@ bool Parser::makeAssignment(std::string str)
 	value_var->setTemp(false);
 	auto it = _variables.find(var_name);
 	if (it != _variables.end())
+	{
+		delete(it->second);
 		it->second = value_var;
+	}
 	else
 		_variables.insert(std::pair<std::string, Type*>(var_name, value_var));
 	return true;
