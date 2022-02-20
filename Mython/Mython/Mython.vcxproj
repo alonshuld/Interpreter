@@ -18,6 +18,32 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Boolean.h" />
+    <ClInclude Include="Helper.h" />
+    <ClInclude Include="IndentationException.h" />
+    <ClInclude Include="Integer.h" />
+    <ClInclude Include="InterpreterException.h" />
+    <ClInclude Include="Parser.h" />
+    <ClInclude Include="Sequence.h" />
+    <ClInclude Include="String.h" />
+    <ClInclude Include="SyntaxException.h" />
+    <ClInclude Include="Type.h" />
+    <ClInclude Include="Void.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Boolean.cpp" />
+    <ClCompile Include="Helper.cpp" />
+    <ClCompile Include="IndentationException.cpp" />
+    <ClCompile Include="Integer.cpp" />
+    <ClCompile Include="Interpreter.cpp" />
+    <ClCompile Include="Parser.cpp" />
+    <ClCompile Include="Sequence.cpp" />
+    <ClCompile Include="String.cpp" />
+    <ClCompile Include="SyntaxException.cpp" />
+    <ClCompile Include="Type.cpp" />
+    <ClCompile Include="Void.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -138,20 +164,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="1\Helper.cpp" />
-    <ClCompile Include="1\IndentationException.cpp" />
-    <ClCompile Include="1\Interpreter.cpp" />
-    <ClCompile Include="1\Parser.cpp" />
-    <ClCompile Include="1\Type.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="1\Helper.h" />
-    <ClInclude Include="1\IndentationException.h" />
-    <ClInclude Include="1\InterpreterException.h" />
-    <ClInclude Include="1\Parser.h" />
-    <ClInclude Include="1\Type.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -1,5 +1,6 @@
 #include "Type.h"
 #include "InterpreterException.h"
+#include "SyntaxException.h"
 #include "Parser.h"
 #include <iostream>
 
@@ -21,8 +22,19 @@ int main(int argc,char **argv)
 	{
 		try
 		{
+			Type* var;
 			// parsing command
-			Parser::parseString(input_string);
+			var = Parser::parseString(input_string);
+			if (var != nullptr)
+			{
+				if (var->isPrintable() == true)
+					std::cout << var->toString() << '\n';
+				delete var;
+			}
+			else
+			{
+				throw SyntaxException();
+			}
 		}
 		catch(InterpreterException& e)
 		{
