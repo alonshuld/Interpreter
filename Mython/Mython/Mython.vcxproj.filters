@@ -48,6 +48,9 @@
     <ClInclude Include="Void.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="NameErrorException.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Boolean.cpp">
@@ -81,6 +84,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Void.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NameErrorException.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,9 +1,12 @@
 #pragma once
 #include "InterpreterException.h"
 #include "IndentationException.h"
+#include "SyntaxException.h"
+#include "NameErrorException.h"
 #include "Integer.h"
 #include "Boolean.h"
 #include "String.h"
+#include "Void.h"
 #include "Type.h"
 #include "Helper.h"
 #include <string>
@@ -15,9 +18,10 @@
 class Parser
 {
 public:
+    static std::unordered_map<std::string, Type*> _variables;
     static Type* parseString(std::string str);
     static Type* getType(std::string str);
-
+    static void ClearVars();
 private:
     static bool isLegalVarName(std::string str);
     static bool makeAssignment(std::string str);

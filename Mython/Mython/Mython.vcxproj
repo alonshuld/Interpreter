@@ -24,6 +24,7 @@
     <ClInclude Include="IndentationException.h" />
     <ClInclude Include="Integer.h" />
     <ClInclude Include="InterpreterException.h" />
+    <ClInclude Include="NameErrorException.h" />
     <ClInclude Include="Parser.h" />
     <ClInclude Include="Sequence.h" />
     <ClInclude Include="String.h" />
@@ -37,6 +38,7 @@
     <ClCompile Include="IndentationException.cpp" />
     <ClCompile Include="Integer.cpp" />
     <ClCompile Include="Interpreter.cpp" />
+    <ClCompile Include="NameErrorException.cpp" />
     <ClCompile Include="Parser.cpp" />
     <ClCompile Include="Sequence.cpp" />
     <ClCompile Include="String.cpp" />

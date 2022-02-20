@@ -45,6 +45,6 @@ int main(int argc,char **argv)
 		std::cout << ">>> ";
 		std::getline(std::cin, input_string);
 	}
-
+	Parser::ClearVars();
 	return 0;
 }
