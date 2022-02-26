@@ -1,5 +1,4 @@
 #include "Parser.h"
-#include <iostream>
 
 std::unordered_map<std::string, Type*> _variables;
 
@@ -58,7 +57,42 @@ Type* Parser::getType(std::string str)
 		e->setTemp(true);
 		return e;
 	}
+	if (isList(str))
+	{
+		List* e = new List(str);
+		e->setTemp(true);
+		return e;
+	}
 	return nullptr;
+}
+
+bool Parser::isList(const std::string& s)
+{
+	std::string cpStr = s;
+	cpStr.erase(std::remove(cpStr.begin(), cpStr.end(), ' '), cpStr.end());
+	int i = 0;
+	int startIndex = 0, endIndex = 0;
+	if (cpStr[0] == '[' && cpStr[cpStr.length() - 1] == ']')
+	{
+		cpStr.erase(remove(cpStr.begin(), cpStr.end(), '['), cpStr.end()); //remove [ from string
+		cpStr.erase(remove(cpStr.begin(), cpStr.end(), ']'), cpStr.end()); //remove ] from string
+		while (i <= cpStr.length())
+		{
+			if (cpStr[i] == ',' || i == cpStr.length())
+			{
+				endIndex = i;
+				std::string subStr = "";
+				subStr.append(cpStr, startIndex, endIndex - startIndex);
+				if (getType(subStr) == nullptr)
+					return false;
+				startIndex = endIndex + 1;
+			}
+			i++;
+		}
+	}
+	else
+		return false;
+	return true;
 }
 
 void Parser::ClearVars()
@@ -94,8 +128,7 @@ bool Parser::makeAssignment(std::string str)
 		value_var = getVariableValue(var); //check if there is variable with this name
 		if (value_var == nullptr) //if there is not then throw error
 			throw NameErrorException();
-		Type* new_value_var = getType(value_var->toString()); //else there is a new var that is a copy of value_var
-		value_var = new_value_var;
+		value_var = getType(value_var->toString()); //else there is a new var that is a copy of 
 	}
 	value_var->setTemp(false);
 	auto it = _variables.find(var_name);

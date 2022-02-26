@@ -1,7 +1,6 @@
 #pragma once
 #include <string>
 
-
 // this is service class with static functions
 class Helper
 {

@@ -7,6 +7,7 @@
 #include "Boolean.h"
 #include "String.h"
 #include "Void.h"
+#include "List.h"
 #include "Type.h"
 #include "Helper.h"
 #include <string>
@@ -25,5 +26,5 @@ private:
     static bool isLegalVarName(std::string str);
     static bool makeAssignment(std::string str);
     static Type* getVariableValue(std::string str);
-
+    static bool isList(const std::string& e);
 };
